@@ -35,7 +35,7 @@ public class Ejercicio6 extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        txtLongitud2 = new javax.swing.JTextField();
+        txtLongitud = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -60,17 +60,17 @@ public class Ejercicio6 extends javax.swing.JFrame {
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 0, 14))); // NOI18N
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtLongitud2.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtLongitud.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtLongitud2KeyTyped(evt);
+                txtLongitudKeyTyped(evt);
             }
         });
-        jPanel7.add(txtLongitud2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 90, 30));
+        jPanel7.add(txtLongitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 90, 30));
 
         jLabel8.setText("Longitud");
         jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 30));
 
-        jPanel6.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 180, 60));
+        jPanel6.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 210, 60));
 
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 0, 12))); // NOI18N
 
@@ -82,14 +82,16 @@ public class Ejercicio6 extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
-        jPanel6.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 180, 140));
+        jPanel6.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 210, 120));
 
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 0, 12))); // NOI18N
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -134,7 +136,7 @@ public class Ejercicio6 extends javax.swing.JFrame {
         });
         jPanel9.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 150, -1));
 
-        jPanel6.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 170, 220));
+        jPanel6.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 170, 190));
 
         jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -146,13 +148,14 @@ public class Ejercicio6 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(416, 339));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtLongitud2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLongitud2KeyTyped
+    private void txtLongitudKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLongitudKeyTyped
 
         char c = evt.getKeyChar();
 
@@ -160,26 +163,26 @@ public class Ejercicio6 extends javax.swing.JFrame {
             getToolkit().beep();
             evt.consume();
         }
-    }//GEN-LAST:event_txtLongitud2KeyTyped
+    }//GEN-LAST:event_txtLongitudKeyTyped
 
     private void cmdCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCrearActionPerformed
 
         int L;
-        if (txtLongitud.getText().trim().isEmpty()) if (txtLongitud.getText().trim().equals("0")) {
-            JOptionPane.showMessageDialog(this, "Digite Un Valor Mayor Que 0", "Error", JOptionPane.ERROR_MESSAGE);
+        if (txtLongitud.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Digite Un Valor Que No Sea 0", "Error", JOptionPane.ERROR_MESSAGE);
             txtLongitud.requestFocusInWindow();
             txtLongitud.selectAll();
         } else if (Integer.parseInt(txtLongitud.getText().trim()) == 0) {
-            JOptionPane.showMessageDialog(this, "La Longitud No Puedes 0, Por Favor Cambie Su Valor", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "La Longitud No Puede Ser 0, Por Favor Cambie Su Valor", "Error", JOptionPane.ERROR_MESSAGE);
             txtLongitud.requestFocusInWindow();
             txtLongitud.selectAll();
+        } else if (txtLongitud.getText().trim().equals("0")) {
+            JOptionPane.showMessageDialog(this, "Digite Valor En La Longitud", "Error", JOptionPane.ERROR_MESSAGE);
+            txtLongitud.requestFocusInWindow();
         } else {
             L = Integer.parseInt(txtLongitud.getText());
             v = new double[L];
             JOptionPane.showMessageDialog(this, "Su Vector Ha Sido Creado Satisfactoriamente", "Notificar", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(this, "Digite Valor En La Longitud", "Error", JOptionPane.ERROR_MESSAGE);
-            txtLongitud.requestFocusInWindow();
         }
         cmdCrear.setEnabled(false);
         cmdLlenarM.setEnabled(true);
@@ -296,23 +299,15 @@ public class Ejercicio6 extends javax.swing.JFrame {
     private javax.swing.JButton cmdLlenarA;
     private javax.swing.JButton cmdLlenarM;
     private javax.swing.JButton cmdMostrar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtLongitud;
-    private javax.swing.JTextField txtLongitud1;
-    private javax.swing.JTextField txtLongitud2;
     private javax.swing.JTextArea txtResultado;
     // End of variables declaration//GEN-END:variables
 }
